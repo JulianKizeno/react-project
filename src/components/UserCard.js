@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import { Card } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
@@ -37,9 +37,9 @@ function UserCard (props){
                         <i><strong>{props.firstName} {props.lastName}</strong></i> ~ {props.jobTitle}
                     </p>
                     <div className="containerCard__social-media">
-                        <span><a href={"mailto:" + props.email}target="_blank"> <i className="far fa-envelope-open containerCard__social-media--icon mail-icon"></i></a></span>
-                        <span><a href={props.linkedin} target="_blank"> <i className="fab fa-linkedin-in containerCard__social-media--icon lkIn-icon"></i></a> </span>
-                        <span><a href={props.gitHub} target="_blank"> <i className="fab fa-github containerCard__social-media--icon github-icon"></i></a></span>
+                        <span><a href={"mailto:" + props.email}target="_blank" rel="noopener noreferrer"> <i className="far fa-envelope-open containerCard__social-media--icon mail-icon"></i></a></span>
+                        <span><a href={props.linkedin} target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in containerCard__social-media--icon lkIn-icon"></i></a> </span>
+                        <span><a href={props.gitHub} target="_blank" rel="noopener noreferrer"> <i className="fab fa-github containerCard__social-media--icon github-icon"></i></a></span>
                     </div>
                 </Card.Body>
                 <figure className='containerCard__content--fig'>
