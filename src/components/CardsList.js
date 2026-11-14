@@ -2,7 +2,7 @@ import React, {useState, useMemo} from 'react'
 
 import './styles/CardsList.css'
 // import '../pages/styles/UserCardList.css'
-import { Card, Navbar } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Gravatar from './Gravatar'
 
@@ -17,14 +17,9 @@ import Gravatar from './Gravatar'
 // }
 function useSearchBadges(badges){
     const [query, setQuery] = useState('')
-    const [filteredBadges, setFilteredBadges] = useState(badges)
-
-    useMemo(() => {
-        const result = badges.filter(badges => `${badges.firstName} ${badges.lastName}`.toLowerCase().includes(query.toLowerCase()))
-        if(filteredBadges.length !== result.length){
-            setFilteredBadges(result)
-        }
-    }, [badges, query])
+    const filteredBadges = useMemo(() => badges.filter(badge =>
+        `${badge.firstName} ${badge.lastName}`.toLowerCase().includes(query.toLowerCase())
+    ), [badges, query])
 
     return {query, setQuery, filteredBadges}
 }
